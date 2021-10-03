@@ -1,0 +1,9 @@
+﻿
+avrdude.exe: AVR device initialized and ready to accept instructions
+avrdude.exe: Device signature = 0x1e950f (probably m328p)
+avrdude.exe: reading input file "led.hex"
+avrdude.exe: writing flash (164 bytes):
+avrdude.exe: 164 bytes of flash written
+
+avrdude.exe done.  Thank you.
+
