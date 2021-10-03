@@ -36,6 +36,9 @@ Link to your `Digital-electronics-2` GitHub repository:
 #define SHORT_DELAY 400 // Delay in milliseconds
 #define LONG_DELAY 1000
 
+#include <util/delay.h> // Functions for busy-wait delay loops
+#include <avr/io.h>     // AVR device-specific IO definitions
+
 int main(void)
 {
     // Set pin as output in Data Direction Register
