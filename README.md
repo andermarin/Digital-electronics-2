@@ -10,21 +10,21 @@ Link to your `Digital-electronics-2` GitHub repository:
 ### Blink example
 
 1. What is the meaning of the following binary operators in C?
-   * `|`
-   * `&`
-   * `^`
-   * `~`
-   * `<<`
-   * `>>`
+   * `|` or
+   * `&` and
+   * `^` xor
+   * `~` not
+   * `<<` shift left
+   * `>>` shift right
 
 2. Complete truth table with operators: `|`, `&`, `^`, `~`
 
 | **b** | **a** |**b or a** | **b and a** | **b xor a** | **not b** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0 |  |  |  |  |
-| 0 | 1 |  |  |  |  |
-| 1 | 0 |  |  |  |  |
-| 1 | 1 |  |  |  |  |
+| 0 | 0 | 0 | 0 | 0 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 0 |
+| 1 | 0 | 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 1 | 0 | 0 |
 
 
 ### Morse code
@@ -32,6 +32,10 @@ Link to your `Digital-electronics-2` GitHub repository:
 1. Listing of C code with syntax highlighting which repeats one "dot" and one "comma" (BTW, in Morse code it is letter `A`) on a LED:
 
 ```c
+#define LED_GREEN   PB5 // AVR pin where green LED is connected
+#define SHORT_DELAY 400 // Delay in milliseconds
+#define LONG_DELAY 1000
+
 int main(void)
 {
     // Set pin as output in Data Direction Register
@@ -47,6 +51,13 @@ int main(void)
     {
         // Pause several milliseconds
         _delay_ms(SHORT_DELAY);
+        PORTB = PORTB & ~(1<<LED_GREEN); // Light on
+        _delay_ms(SHORT_DELAY);
+        PORTB = PORTB & ~(1<<LED_GREEN); // Light off
+        _delay_ms(SHORT_DELAY);
+        PORTB = PORTB & ~(1<<LED_GREEN); // Light on
+        _delay_ms(LONG_DELAY);
+        PORTB = PORTB & ~(1<<LED_GREEN); // Light off
 
         // WRITE YOUR CODE HERE
     }
@@ -59,7 +70,7 @@ int main(void)
 
 2. Scheme of Morse code application, i.e. connection of AVR device, LED, resistor, and supply voltage. The image can be drawn on a computer or by hand. Always name all components and their values!
 
-   ![my figure](![Captura](https://user-images.githubusercontent.com/91128840/135751590-474c131a-dc30-4636-8be4-01c9b9fc82c9.JPG)
+   ![my figure]()
 )
 
 
