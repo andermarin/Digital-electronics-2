@@ -18,6 +18,8 @@ Link to your `Digital-electronics-2` GitHub repository:
 | `float`    | 32 | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
 | `void`     |  |  |  |
 
+2. Any function in C contains a declaration (function prototype), a definition (block of code, body of the function); each declared function can be executed (called). Study this article and complete the missing sections in the following user defined function declaration, definition, and call.
+
 ### GPIO library
 
 1. In your words, describe the difference between the declaration and the definition of the function in C.
