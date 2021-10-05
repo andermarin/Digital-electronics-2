@@ -1,3 +1,5 @@
+# Lab 3: ANDER MARIN
+
 Link to your `Digital-electronics-2` GitHub repository:
 
    []()
