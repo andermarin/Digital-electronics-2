@@ -24,7 +24,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 #include <avr/io.h>
 
 // Function declaration (prototype)
-uint16_t calculate(uint8_t, ...    );
+uint16_t calculate(uint8_t, uint8_t );
 
 int main(void)
 {
@@ -33,7 +33,7 @@ int main(void)
     uint16_t c;
 
     // Function call
-    c = ...      (a, b);
+    c = calculate(a, b);
 
     while (1)
     {
@@ -46,7 +46,7 @@ int main(void)
 {
     uint16_t result;    // result = x^2 + 2xy + y^2
 
-    result = x*x;
+    result = x*x + 2*x*y + y*y;
     ...
     ...
     return result;
