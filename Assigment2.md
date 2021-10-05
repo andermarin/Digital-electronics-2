@@ -20,6 +20,39 @@ Link to your `Digital-electronics-2` GitHub repository:
 
 2. Any function in C contains a declaration (function prototype), a definition (block of code, body of the function); each declared function can be executed (called). Study this article and complete the missing sections in the following user defined function declaration, definition, and call.
 
+```c
+#include <avr/io.h>
+
+// Function declaration (prototype)
+uint16_t calculate(uint8_t, ...    );
+
+int main(void)
+{
+    uint8_t a = 156;
+    uint8_t b = 14;
+    uint16_t c;
+
+    // Function call
+    c = ...      (a, b);
+
+    while (1)
+    {
+    }
+    return 0;
+}
+
+// Function definition (body)
+...      calculate(uint8_t x, uint8_t y)
+{
+    uint16_t result;    // result = x^2 + 2xy + y^2
+
+    result = x*x;
+    ...
+    ...
+    return result;
+}
+```
+
 ### GPIO library
 
 1. In your words, describe the difference between the declaration and the definition of the function in C.
