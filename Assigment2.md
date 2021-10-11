@@ -16,7 +16,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 | `uint16_t` | 16 | 0,1, ..., 65535 | Unsigned 16-bit integrer |
 | `int16_t`  | 16 | −32 768, ..., +32 767 | 16-bit integrer |
 | `float`    | 32 | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
-| `void`     |  |  |  |
+| `void`     | 0 | No range | - |
 
 ### GPIO library
 
@@ -46,6 +46,14 @@ Link to your `Digital-electronics-2` GitHub repository:
 #include <avr/io.h>         // AVR device-specific IO definitions
 #include <gpio.h>           // GPIO library for AVR-GCC
 
+//Function declaration
+void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num);
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num);
+
 int main(void)
 {
     // Green LED at port B
@@ -64,9 +72,11 @@ int main(void)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
-        if()
+        while(!GPIO_read(&PORTD,BUTTON)) //LEds will change will button is pressed
         {
         GPIO_toggle(&PORTB, LED_GREEN);
+	GPIO_toggle(&PORTB, BLUE);
+	_delay_ms(BLINK_DELAY);	
         }
 
         // WRITE YOUR CODE HERE
