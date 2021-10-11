@@ -16,7 +16,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 | `uint16_t` | 16 | 0,1, ..., 65535 | Unsigned 16-bit integrer |
 | `int16_t`  | 16 | −32 768, ..., +32 767 | 16-bit integrer |
 | `float`    | 32 | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
-| `void`     | 0 | No range | - |
+| `void`     | 0 | No range | Nothing |
 
 ### GPIO library
 
