@@ -54,7 +54,13 @@ Link to your `Digital-electronics-2` GitHub repository:
  *           from user-defined GPIO library is used.
  * Returns:  none
  **********************************************************************/
-
+//We declare all the fuctions
+void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num);
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num);
 int main(void)
 {
     // Green LED at port B
