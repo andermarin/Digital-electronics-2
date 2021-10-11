@@ -47,12 +47,13 @@ Link to your `Digital-electronics-2` GitHub repository:
 #include <avr/io.h>         // AVR device-specific IO definitions
 #include <gpio.h>           // GPIO library for AVR-GCC
 
-void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
-void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
-void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
-void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num);
-void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num);
-uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num);
+/* Function definitions ----------------------------------------------*/
+/**********************************************************************
+ * Function: Main function where the program execution begins
+ * Purpose:  Toggle two LEDs when a push button is pressed. Functions 
+ *           from user-defined GPIO library is used.
+ * Returns:  none
+ **********************************************************************/
 
 int main(void)
 {
