@@ -37,20 +37,25 @@ int main(void)
     GPIO_write_low(&PORTB, LED_GREEN);
 
     // Configure the second LED at port C
-	
+    GPIO_config_output(&DDRC, LED_BLUE);
+    GPIO_write_high(&PORTC, LED_BLUE);
 
     // Configure Push button at port D and enable internal pull-up resistor
-
-
+    GPIO_config_input_pullup(&DDRD, PUSH_BUTTON);
+    
     // Infinite loop
     while (1)
     {
-        // Pause several milliseconds
-        _delay_ms(BLINK_DELAY);
+	    // Pause several milliseconds
+	    _delay_ms(BLINK_DELAY);
+	    while(!GPIO_read(&PORTD,BUTTON)) //LEds will change will button is pressed
+	    {
+		    GPIO_toggle(&PORTB, LED_GREEN);
+		    GPIO_toggle(&PORTB, BLUE);
+		    _delay_ms(BLINK_DELAY);
+	    }
 
-        // WRITE YOUR CODE HERE
-		
-	GPIO_toggle(&PORTB, LED_GREEN);
+	    // WRITE YOUR CODE HERE
 	
     }
 
