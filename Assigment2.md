@@ -34,7 +34,7 @@ Link to your `Digital-electronics-2` GitHub repository:
     // WRITE YOUR CODE HERE
 /* Defines -----------------------------------------------------------*/
 #define LED_GREEN   PB5     // AVR pin where green LED is connected
-#define LED_GREEN   PB6     // AVR pin where green LED is connected
+#define LED_BLUE   PB6     // AVR pin where blue LED is connected
 #define BLINK_DELAY 500
 #ifndef F_CPU
 #define PUSH_BUTTON PB4     // AVR pin where push button is connected
@@ -47,6 +47,12 @@ Link to your `Digital-electronics-2` GitHub repository:
 #include <avr/io.h>         // AVR device-specific IO definitions
 #include <gpio.h>           // GPIO library for AVR-GCC
 
+void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num);
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num);
 
 int main(void)
 {
@@ -55,7 +61,7 @@ int main(void)
     GPIO_write_low(&PORTB, LED_GREEN);
 
     // Configure the second LED at port C
-	 GPIO_config_output(&DDRC, LED_BLUE);
+    GPIO_config_output(&DDRC, LED_BLUE);
     GPIO_write_high(&PORTC, LED_BLUE);
 
     // Configure Push button at port D and enable internal pull-up resistor
@@ -69,7 +75,7 @@ int main(void)
         while(!GPIO_read(&PORTD,BUTTON)) //LEds will change will button is pressed
         {
         GPIO_toggle(&PORTB, LED_GREEN);
-	GPIO_toggle(&PORTB, BLUE);
+	GPIO_toggle(&PORTB, LED_BLUE);
 	_delay_ms(BLINK_DELAY);	
         }
 
