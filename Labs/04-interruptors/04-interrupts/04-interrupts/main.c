@@ -36,6 +36,15 @@ int main(void)
     GPIO_config_output(&DDRB, LED_D1);
     GPIO_write_low(&PORTB, LED_D1);
 	
+	GPIO_config_output(&DDRB, LED_D2);
+	GPIO_write_low(&PORTB, LED_D2);
+	
+	GPIO_config_output(&DDRB, LED_D3);
+	GPIO_write_low(&PORTB, LED_D3);
+	
+	GPIO_config_output(&DDRB, LED_D4);
+	GPIO_write_low(&PORTB, LED_D4);   
+	
 	//Configuration of the push button
 	GPIO_config_input_nopull(&DDRC,BUTTON_S1);
 
@@ -50,7 +59,7 @@ int main(void)
     // Infinite loop
     while (1)
     {
-        /* Empty loop. All subsequent operations are performed exclusively 
+        /* Empty loop. All subsequent operations are performed exclusively
          * inside interrupt service routines ISRs */
 		if (GPIO_read(&PINC, BUTTON_S1) == 0)
 		{
@@ -74,7 +83,18 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-
+	GPIO_write_high(&PORTB, LED_D1);
+	GPIO_write_low(&PORTB, LED_D1);
+	TIMER1_OVF_vect();
+	GPIO_write_high(&PORTB, LED_D2);
+	GPIO_write_low(&PORTB, LED_D2);
+	TIMER1_OVF_vect();
+	GPIO_write_high(&PORTB, LED_D3);
+	GPIO_write_low(&PORTB, LED_D3);
+	TIMER1_OVF_vect();
+	GPIO_write_high(&PORTB, LED_D4);
+	GPIO_write_low(&PORTB, LED_D4);
+	TIMER1_OVF_vect();
     // WRITE YOUR CODE HERE
-	GPIO_toggle(&PORTB,LED_D1);
+	
 }
