@@ -83,18 +83,14 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-	GPIO_write_high(&PORTB, LED_D1);
-	GPIO_write_low(&PORTB, LED_D1);
-	TIMER1_OVF_vect();
-	GPIO_write_high(&PORTB, LED_D2);
-	GPIO_write_low(&PORTB, LED_D2);
-	TIMER1_OVF_vect();
-	GPIO_write_high(&PORTB, LED_D3);
-	GPIO_write_low(&PORTB, LED_D3);
-	TIMER1_OVF_vect();
-	GPIO_write_high(&PORTB, LED_D4);
-	GPIO_write_low(&PORTB, LED_D4);
-	TIMER1_OVF_vect();
+	GPIO_toggle(&PORTB, LED_D1);
+	TIMER1_OVF_vect;
+	GPIO_toggle(&PORTB, LED_D2);
+	TIMER1_OVF_vect;
+	GPIO_toggle(&PORTB, LED_D3);
+	TIMER1_OVF_vect;
+	GPIO_toggle(&PORTB, LED_D4);
+	TIMER1_OVF_vect;
     // WRITE YOUR CODE HERE
 	
 }
