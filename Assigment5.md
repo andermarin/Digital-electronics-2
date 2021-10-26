@@ -2,7 +2,7 @@
 
 Link to your `Digital-electronics-2` GitHub repository:
 
-[]()
+[https://github.com/andermarin/Digital-electronics-2](https://github.com/andermarin/Digital-electronics-2)
 
 
 ### 7-segment library
