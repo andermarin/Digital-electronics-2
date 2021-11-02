@@ -1,4 +1,4 @@
-# Lab 6: YOUR_FIRSTNAME FAMILYNAME
+# Lab 6: ANDER MARIN
 
 Link to your `Digital-electronics-2` GitHub repository:
 
