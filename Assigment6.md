@@ -8,7 +8,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 ### LCD display module
 
 1. In your words, describe what ASCII table is.
-   * ASCII:
+   * ASCII: Is a table that contains characters, numbers... with their 7-bit code. It is used to represent those characters in binary, hexa and so on.
 
 2. (Hand-drawn) picture of time signals between ATmega328P and LCD keypad shield (HD44780 driver) when transmitting three character data `De2`.
 
