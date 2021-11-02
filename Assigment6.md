@@ -29,7 +29,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 ```c
 /* Variables ---------------------------------------------------------*/
 // Custom character definition
-uint8_t customChar[16] = {
+uint8_t customChar1[16] = {
     // WRITE YOUR CODE HERE
     0b00111,
     0b01110,
@@ -40,7 +40,7 @@ uint8_t customChar[16] = {
     0b00111,
     0b00011
 };
-uint8_t customChar[16] = {
+uint8_t customChar2[16] = {
     // WRITE YOUR CODE HERE
     0b11100,
     0b11111,
