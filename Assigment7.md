@@ -28,12 +28,64 @@ Link to this file in your GitHub repository:
 ISR(ADC_vect)
 {
     uint16_t value = 0;
-    char lcd_string[4] = "0000";
+	char lcd_string[4] = "0000";
 
-    value = ADC;                  // Copy ADC result to 16-bit variable
-    itoa(value, lcd_string, 10);  // Convert decimal value to string
+	value = ADC;                  // Copy ADC result to 16-bit variable
+	
+	//Clear previous value
+	lcd_gotoxy(8,0);
+	lcd_puts("    ");
+	lcd_gotoxy(8,1);
+	lcd_puts("                ");
+	//Put the value
+	itoa(value, lcd_string, 10);  // Convert decimal value to string
+	lcd_gotoxy(8,0);
+	lcd_puts(lcd_string);
+	//Send the same value to UART
+	uart_puts(lcd_string);
+	uart_puts("   ");
+	
+	//HEXA
+	
+	//WHAT BUTTON IS PRESSED
+	if(value=1023){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("none");
+		uart_puts("none");
+	}if(value=639){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("select");
+		uart_puts("select");
+	}if(value=409){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("left");
+		uart_puts("left");
+	}if(value=256){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("down");
+		uart_puts("down");
+	}if(value=102){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("up");
+		uart_puts("up");
+	}else{
+		lcd_gotoxy(8,1);
+		lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("right");
+		uart_puts("right");
+	}
 
-    // WRITE YOUR CODE HERE
 
 }
 ```
