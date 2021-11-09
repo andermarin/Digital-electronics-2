@@ -2,7 +2,7 @@
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/andermarin/Digital-electronics-2](https://github.com/andermarin/Digital-electronics-2)
 
 
 ### Analog-to-Digital Conversion
@@ -95,11 +95,11 @@ ISR(ADC_vect)
 
 1. (Hand-drawn) picture of UART signal when transmitting three character data `De2` in 4800 7O2 mode (7 data bits, odd parity, 2 stop bits, 4800&nbsp;Bd).
 
-   ![your figure]()
+   ![your figure](https://github.com/andermarin/Digital-electronics-2/blob/main/Labs/07-uart/WhatsApp%20Image%202021-11-09%20at%2010.53.47.jpeg)
 
 2. Flowchart figure for function `get_parity(uint8_t data, uint8_t type)` which calculates a parity bit of input 8-bit `data` according to parameter `type`. The image can be drawn on a computer or by hand. Use clear descriptions of the individual steps of the algorithms.
 
-   ![your figure]()
+   ![your figure](https://github.com/andermarin/Digital-electronics-2/blob/main/Labs/07-uart/Captura.JPG)
 
 
 ### Temperature meter
