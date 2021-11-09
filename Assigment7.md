@@ -48,6 +48,7 @@ ISR(ADC_vect)
 	//HEXA
 	
 	//WHAT BUTTON IS PRESSED
+	//It is made with the values measured in the first table
 	if(value=1023){
 			lcd_gotoxy(8,1);
 			lcd_puts("                ");
