@@ -126,6 +126,8 @@ ISR(TIMER1_OVF_vect)
 		itoa(addr, uart_string, 16);
 		uart_puts(uart_string);
 		uart_puts("   ");
+		number_of_devices++;
+		state = STATE_IDLE;
         break;
 
     // If something unexpected happens then move to IDLE
