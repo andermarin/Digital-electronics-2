@@ -1,8 +1,8 @@
-# Lab 8: YOUR_FIRSTNAME LASTNAME
+# Lab 8: ANDER MARIN
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/andermarin/Digital-electronics-2/tree/main/Labs/08-i2c](https://github.com/andermarin/Digital-electronics-2/tree/main/Labs/08-i2c)
 
 ### Arduino Uno pinout
 
@@ -14,7 +14,7 @@ Link to this file in your GitHub repository:
    * SPI pins:10,11,12,13
    * external interrupt pins INT0, INT1:2,3
 
-   ![your figure](Images/arduino_uno_pinout.png)
+   ![your figure](https://github.com/andermarin/Digital-electronics-2/blob/main/Labs/08-i2c/ARDUINO.JPG)
 
 ### I2C
 
@@ -100,4 +100,4 @@ Consider an application for temperature and humidity measurement and display. Us
 
 1. FSM state diagram picture of meteo station. The image can be drawn on a computer or by hand. Concise name of individual states and describe the transitions between them.
 
-   ![your figure]()
+   ![your figure](https://github.com/andermarin/Digital-electronics-2/blob/main/Labs/08-i2c/Captura.JPG)
