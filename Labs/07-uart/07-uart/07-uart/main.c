@@ -110,31 +110,42 @@ ISR(ADC_vect)
 	//HEXA
 	
 	//WHAT BUTTON IS PRESSED
-	if(value<1023){
+	if(value=1023){
+			lcd_gotoxy(8,1);
+			lcd_puts("                ");
+		lcd_gotoxy(8,1);
+		lcd_puts("none");
+		uart_puts("none");
+	}if(value=639){
 			lcd_gotoxy(8,1);
 			lcd_puts("                ");
 		lcd_gotoxy(8,1);
 		lcd_puts("select");
-	}if(value<=639){
+		uart_puts("select");
+	}if(value=409){
 			lcd_gotoxy(8,1);
 			lcd_puts("                ");
 		lcd_gotoxy(8,1);
 		lcd_puts("left");
-	}if(value<409){
+		uart_puts("left");
+	}if(value=256){
 			lcd_gotoxy(8,1);
 			lcd_puts("                ");
 		lcd_gotoxy(8,1);
 		lcd_puts("down");
-	}if(value<=256){
+		uart_puts("down");
+	}if(value=102){
 			lcd_gotoxy(8,1);
 			lcd_puts("                ");
 		lcd_gotoxy(8,1);
 		lcd_puts("up");
-	}if(value<=98){
-			lcd_gotoxy(8,1);
-			lcd_puts("                ");
+		uart_puts("up");
+	}else{
+		lcd_gotoxy(8,1);
+		lcd_puts("                ");
 		lcd_gotoxy(8,1);
 		lcd_puts("right");
+		uart_puts("right");
 	}
 
 		
